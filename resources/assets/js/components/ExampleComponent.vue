@@ -1,5 +1,7 @@
 <template>
-    {{ exampleProperty }}
+    <div>
+        {{ exampleProperty }}
+    </div>
 </template>
 
 <script>

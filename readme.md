@@ -1,4 +1,7 @@
 # Vlug boilerplate
+Opinionated, basic Laravel boilerplate.
+
+## Installation
 ```bash
 php artisan key:generate
  
@@ -11,9 +14,13 @@ yarn install
 npm run dev
 ```
 
+### Server permissions
+todo
 
 
-## Broadcasting events
+
+
+### Broadcasting events
 ```bash
 composer require pusher/pusher-php-server
  
