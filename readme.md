@@ -2,14 +2,15 @@
 Opinionated, basic Laravel boilerplate.
 
 ## Installation
+Rename `.env.example` to `.env` and fill in the arrows
 ```bash
-php artisan key:generate
- 
 composer update
+
+php artisan key:generate
  
 php artisan migrate
  
-yarn install
+npm install
  
 npm run dev
 ```
