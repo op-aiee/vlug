@@ -16,10 +16,17 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
     }
 
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('password_resets');
     }
 }
