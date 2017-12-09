@@ -20,7 +20,6 @@ abstract class TestCase extends BaseTestCase
         $this->testFilePath = base_path('tests/Files/');
 
         $this->tempFilePath = $this->testFilePath.'Temp/';
-
     }
 
     public function tearDown()
@@ -38,13 +37,13 @@ abstract class TestCase extends BaseTestCase
             return substr($name, 0, 1) !== '.';
         });
 
-        foreach($fileNames as $name) {
+        foreach ($fileNames as $name) {
             unlink($this->tempFilePath.$name);
         }
     }
 
     protected function getSnapshotDirectory(): string
     {
-        return $this->testFilePath.'__snapshots__';
+        return $this->testFilePath.'_snapshots_';
     }
 }

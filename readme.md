@@ -10,7 +10,7 @@ php artisan key:generate
  
 php artisan migrate
  
-npm install
+npm install (--no-bin-links)
  
 npm run dev
 ```
