@@ -15,7 +15,7 @@ class RedirectServiceProvider extends ServiceProvider
     public function boot()
     {
         foreach ($this->redirects as $url => $destinationRouteName) {
-            Route::any($url, function() use ($destinationRouteName) {
+            Route::any($url, function () use ($destinationRouteName) {
                 return redirect(route($destinationRouteName), 301);
             });
         }

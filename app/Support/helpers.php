@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Storage;
-
 /**
  * @param $path
  * @param null|string $disk
@@ -11,7 +9,7 @@ function storage_disk_file_path($path, $disk = null)
 {
     $disk = $disk ?: env('FILESYSTEM_DRIVER');
 
-    $storagePath = Storage::disk($disk)->getDriver()->getAdapter()->getPathPrefix();
+    $storagePath = Illuminate\Support\Facades\Storage::disk($disk)->getDriver()->getAdapter()->getPathPrefix();
 
     return str_finish($storagePath, '/').ltrim($path, '/');
 }
@@ -22,11 +20,11 @@ function interval(int $interval, $closure)
 
     static $calls = [];
 
-    $caller = sha1(debug_backtrace()[0]['file'] . '|' . debug_backtrace()[0]['line']);
+    $caller = sha1(debug_backtrace()[0]['file'].'|'.debug_backtrace()[0]['line']);
 
     $callCount = $calls[$caller] ?? 1;
 
-    if($callCount % $interval === 0) {
+    if ($callCount % $interval === 0) {
         $closure();
     }
 

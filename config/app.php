@@ -10,7 +10,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'timezone' => 'Europe/Amsterdam',
+    'timezone' => 'UTC',
 
     'locale' => 'en',
 
@@ -22,7 +22,7 @@ return [
 
     // Logging Configuration.
     //     Available Settings: "single", "daily", "syslog", "errorlog"
-    'log' => env('APP_LOG', 'daily'),
+    'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 

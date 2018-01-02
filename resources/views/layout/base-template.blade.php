@@ -24,17 +24,17 @@
 </head>
 <body>
 
-@include('layout.header')
+    @include('layout.header')
 
-<div id="app">
-    @yield('content')
-</div>
+    <div id="app">
+        @yield('content')
+    </div>
 
-@include('layout.footer')
+    @include('layout.footer')
 
-<script type="text/javascript" src="{{ mix('js/scripts.js') }}"></script>
+    <script type="text/javascript" src="{{ mix('js/scripts.js') }}"></script>
 
-@stack('footer-scripts')
+    @stack('footer')
 
 </body>
 </html>

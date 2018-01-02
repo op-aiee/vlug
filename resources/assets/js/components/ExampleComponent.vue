@@ -27,7 +27,7 @@
 
         methods: {
 
-            exampleFunction: function(string) {
+            exampleFunction: function (string) {
                 return string;
             },
 
