@@ -15,7 +15,7 @@
 
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link rel="stylesheet" type="text/css" href="{{ mix('css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ mix('css/main.css') }}" />
 
     @if(App::environment('production'))
         {{-- google analytics goes here --}}
