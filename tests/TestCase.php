@@ -9,7 +9,7 @@ use Illuminate\Contracts\Console\Kernel;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication, MatchesSnapshots;
+    use MatchesSnapshots;
 
     protected $testFilePath;
 

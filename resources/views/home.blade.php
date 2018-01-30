@@ -1,7 +1,7 @@
-@extends('layout.base-template')
-
-@section('title',       'SEO title')
-@section('description', 'SEO description')
+@extends('layout.base-template', [
+    'title'       => 'SEO title',
+    'description' => 'SEO description',
+])
 
 @section('content')
 
