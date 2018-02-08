@@ -28,7 +28,7 @@ if (token) {
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: Laravel.pusherKey,
-//     cluster: Laravel.pusherCluster,
+//     key: Laravel.pusherKey, // since 5.6: process.env.MIX_PUSHER_APP_KEY
+//     cluster: Laravel.pusherCluster, // since 5.6: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: Laravel.pusherEncrypted,
 // });
