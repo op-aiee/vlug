@@ -22,11 +22,11 @@
     @endif
 
 </head>
-<body>
+<body class="bg-grey-lighter">
 
     @include('layout.header')
 
-    <div id="app">
+    <div id="app" class="container mx-auto p-2">
         @yield('content')
     </div>
 
