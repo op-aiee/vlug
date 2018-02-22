@@ -14,6 +14,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Where to redirect users after login.
+     */
     protected function redirectTo(): string
     {
         return '/';
