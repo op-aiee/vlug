@@ -15,18 +15,23 @@ function storage_disk_file_path($path, $disk = null)
     return str_finish($storagePath, '/').ltrim($path, '/');
 }
 
-function interval(int $interval, $closure)
+/**
+ * Trigger a "dd()" after it has been called "timesCalled" times.
+ *
+ * @param $var
+ *
+ * @param int $timesCalled
+ */
+function dd_delay($var, int $timesCalled = 2)
 {
-    $interval = ($interval === 0) ? 1 : $interval;
-
     static $calls = [];
 
     $caller = sha1(debug_backtrace()[0]['file'].'|'.debug_backtrace()[0]['line']);
 
     $callCount = $calls[$caller] ?? 1;
 
-    if ($callCount % $interval === 0) {
-        $closure();
+    if ($callCount === $timesCalled) {
+        dd($var);
     }
 
     $calls[$caller] = $callCount + 1;
