@@ -5,7 +5,7 @@ Main features:
 - Snapshot assertions
 
 # Boilerplate version
-[laravel/laravel@0869d963aa96e2a9d4ab58cb451e35e9a31b07d9](https://github.com/laravel/laravel/compare/0869d963aa96e2a9d4ab58cb451e35e9a31b07d9...master)
+2018-05-25 [laravel/laravel@0869d963aa96e2a9d4ab58cb451e35e9a31b07d9](https://github.com/laravel/laravel/compare/0869d963aa96e2a9d4ab58cb451e35e9a31b07d9...master)
 
 ## Installation
 Rename `.env.example` to `.env` and fill in the arrows
