@@ -3,6 +3,7 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Illuminate\Support\Carbon;
 use Spatie\Snapshots\MatchesSnapshots;
 use Illuminate\Contracts\Console\Kernel;
 
@@ -12,40 +13,40 @@ abstract class TestCase extends BaseTestCase
 
     protected $testFilePath;
 
-    protected $tempFilePath;
-
     public function setUp()
     {
         parent::setUp();
 
-        $this->testFilePath = base_path('tests/Files/');
+        $this->testFilePath = base_path('tests/Storage/');
 
-        $this->tempFilePath = $this->testFilePath.'Temp/';
-    }
-
-    public function tearDown()
-    {
-        $this->emptyTempFilesDirectory();
-
-        parent::tearDown();
-    }
-
-    protected function emptyTempFilesDirectory()
-    {
-        $fileNames = scandir($this->tempFilePath);
-
-        $fileNames = array_filter($fileNames, function ($name) {
-            return substr($name, 0, 1) !== '.';
-        });
-
-        foreach ($fileNames as $name) {
-            unlink($this->tempFilePath.$name);
-        }
+        // Carbon::setTestNow('2018-05-07 12:00:00');
     }
 
     protected function getSnapshotDirectory(): string
     {
-        return $this->testFilePath.'_snapshots_';
+        $subdirectory = property_exists($this, 'snapshotSubdirectory')
+            ? DIRECTORY_SEPARATOR.ltrim($this->snapshotSubdirectory, DIRECTORY_SEPARATOR)
+            : '';
+
+        return $this->testFilePath.'_snapshots_'.$subdirectory;
+    }
+
+    protected function getFileSnapshotDirectory(): string
+    {
+        $subdirectory = property_exists($this, 'fileSnapshotSubdirectory')
+            ? DIRECTORY_SEPARATOR.ltrim($this->fileSnapshotSubdirectory, DIRECTORY_SEPARATOR)
+            : '';
+
+        return $this->testFilePath.'_file-snapshots_'.$subdirectory;
+    }
+
+    protected function progressTimeInMinutes($minutes = 1)
+    {
+        Carbon::setTestNow(
+            now()->addMinutes($minutes)
+        );
+
+        return $this;
     }
 
     public function createApplication()
