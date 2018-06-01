@@ -20,6 +20,10 @@ abstract class TestCase extends BaseTestCase
         $this->testFilePath = base_path('tests/Storage/');
 
         // Carbon::setTestNow('2018-05-07 12:00:00');
+        
+        TestResponse::macro('dump', function () {
+            dd($this);
+        });
     }
 
     protected function getSnapshotDirectory(): string
