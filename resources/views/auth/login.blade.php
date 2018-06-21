@@ -15,7 +15,7 @@
         </label>
 
         <label>
-            Wachtwoord
+            Password
             <input class="field" type="password" name="password" required>
         </label>
 
