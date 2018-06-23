@@ -1,11 +1,11 @@
 # Vlug Laravel Boilerplate
 Main features:
 - Tailwindcss + purgecss
-- In-memory Sqlite testing database
+- In-memory SQLite testing database
 - Snapshot assertions
 
 # Boilerplate version
-2018-05-25 [laravel/laravel@0869d963aa96e2a9d4ab58cb451e35e9a31b07d9](https://github.com/laravel/laravel/compare/0869d963aa96e2a9d4ab58cb451e35e9a31b07d9...master)
+2018-06-23 [laravel/laravel@d53539](https://github.com/laravel/laravel/compare/d53539b47b6d2a20d0c3d3257ad801bc72547c9d...master)
 
 ## Installation
 Rename `.env.example` to `.env` and fill in the arrows
