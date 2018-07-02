@@ -5,12 +5,13 @@ namespace Tests;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\TestResponse;
 use Illuminate\Support\Carbon;
+use SjorsO\MocksTime\MocksTime;
 use Spatie\Snapshots\MatchesSnapshots;
 use Illuminate\Contracts\Console\Kernel;
 
 abstract class TestCase extends BaseTestCase
 {
-    use MatchesSnapshots;
+    use MocksTime, MatchesSnapshots;
 
     protected $testFilePath;
 
@@ -20,7 +21,7 @@ abstract class TestCase extends BaseTestCase
 
         $this->testFilePath = base_path('tests/Storage/');
 
-        // Carbon::setTestNow('2018-05-07 12:00:00');
+        // $this->setTestNow('2018-05-07 12:00:00');
         
         TestResponse::macro('dump', function () {
             dd($this);
@@ -43,15 +44,6 @@ abstract class TestCase extends BaseTestCase
             : '';
 
         return $this->testFilePath.'_file-snapshots_'.$subdirectory;
-    }
-
-    protected function progressTimeInMinutes($minutes = 1)
-    {
-        Carbon::setTestNow(
-            now()->addMinutes($minutes)
-        );
-
-        return $this;
     }
 
     public function createApplication()
