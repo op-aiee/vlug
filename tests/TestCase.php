@@ -4,7 +4,7 @@ namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\TestResponse;
-use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use SjorsO\MocksTime\MocksTime;
 use Spatie\Snapshots\MatchesSnapshots;
 use Illuminate\Contracts\Console\Kernel;
@@ -19,7 +19,7 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        $this->testFilePath = base_path('tests/Storage/');
+        $this->testFilePath = base_path('tests/Files/');
 
         // $this->setTestNow('2018-05-07 12:00:00');
         
@@ -30,20 +30,16 @@ abstract class TestCase extends BaseTestCase
 
     protected function getSnapshotDirectory(): string
     {
-        $subdirectory = property_exists($this, 'snapshotSubdirectory')
-            ? DIRECTORY_SEPARATOR.ltrim($this->snapshotSubdirectory, DIRECTORY_SEPARATOR)
-            : '';
-
-        return $this->testFilePath.'_snapshots_'.$subdirectory;
+        return $this->getFileSnapshotDirectory();
     }
 
     protected function getFileSnapshotDirectory(): string
     {
-        $subdirectory = property_exists($this, 'fileSnapshotSubdirectory')
-            ? DIRECTORY_SEPARATOR.ltrim($this->fileSnapshotSubdirectory, DIRECTORY_SEPARATOR)
+        $subDirectory = property_exists($this, 'snapshotDirectory')
+            ? DIRECTORY_SEPARATOR.$this->snapshotDirectory
             : '';
 
-        return $this->testFilePath.'_file-snapshots_'.$subdirectory;
+        return $this->testFilesStoragePath.'_snapshots_'.$subDirectory;
     }
 
     public function createApplication()
