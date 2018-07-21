@@ -1,44 +1,34 @@
 # Vlug Laravel Boilerplate
 Main features:
-- Tailwindcss + purgecss
-- In-memory SQLite testing database
-- Snapshot assertions
+- [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
+- Ready-to-go testing setup
+    - In-memory SQLite database
+    - [Snapshot assertions](https://github.com/spatie/phpunit-snapshot-assertions)
+
+Opinionated defaults:
+- `app/Models` directory
+- [Ide Helpers](https://github.com/barryvdh/laravel-ide-helper) are automatically generated after `composer update`
+- Separate route files for web, api and admin routes
+- Auto-loaded `app/Support/helpers.php` file
+- An abstract `app/Support/Enums/Enum` class
+- Unhelpful phpdoc and comments have been removed
+- No `tests/Feature` directory
+- No `routes/console.php` and `routes/channels.php` files
 
 # Boilerplate version
-2018-06-23 [compare to laravel master](https://github.com/laravel/laravel/compare/c6d7d83ba3c81b31d663ae2917be4c81cc905b8b...master)
+[compare to laravel master](https://github.com/laravel/laravel/compare/5da2d13b04ede450120affdd46c0cbe3a2fe54ef...master)
 
 ## Installation
-Rename `.env.example` to `.env` and fill in the arrows
 ```bash
+cp .env.examle .env
+
 composer update
 
 php artisan key:generate
  
 php artisan migrate
  
-npm install (--no-bin-links)
+npm install
  
 npm run dev
-```
-
-### Broadcasting events
-```bash
-composer require pusher/pusher-php-server
- 
-npm install laravel-echo
- 
-npm install pusher-js
-```
-
-Add the following to the page head in  `base-template.blade.php`:
-```php
-<script>
-    <?php
-    echo 'window.Laravel = ' . json_encode([                
-            'pusherKey'       => env('PUSHER_APP_KEY'),
-            'pusherCluster'   => env('PUSHER_APP_CLUSTER'),
-            'pusherEncrypted' => env('APP_HTTPS'),
-        ]);
-    ?>
-</script>
 ```

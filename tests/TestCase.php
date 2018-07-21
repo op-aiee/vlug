@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\TestResponse;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +27,13 @@ abstract class TestCase extends BaseTestCase
         TestResponse::macro('dump', function () {
             dd($this);
         });
+    }
+
+    protected function apiLogin($user = null)
+    {
+        $user = $user ?: factory(User::class)->create();
+
+        return $this->actingAs($user, 'api');
     }
 
     protected function getSnapshotDirectory(): string
