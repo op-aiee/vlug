@@ -7,7 +7,7 @@ Main features:
 
 Opinionated defaults:
 - `app/Models` directory
-- [Ide Helpers](https://github.com/barryvdh/laravel-ide-helper) are automatically generated after `composer update`
+- [Ide Helpers](https://github.com/barryvdh/laravel-ide-helper) are automatically generated after `composer update` or `composer dumpautoload`
 - Separate route files for web, api and admin routes
 - Auto-loaded `app/Support/helpers.php` file
 - An abstract `app/Support/Enums/Enum` class
