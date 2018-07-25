@@ -47,7 +47,7 @@ abstract class TestCase extends BaseTestCase
             ? DIRECTORY_SEPARATOR.$this->snapshotDirectory
             : '';
 
-        return $this->testFilesStoragePath.'_snapshots_'.$subDirectory;
+        return $this->testFilePath.'_snapshots_'.$subDirectory;
     }
 
     public function createApplication()
