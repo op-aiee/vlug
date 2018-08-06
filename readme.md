@@ -1,8 +1,7 @@
 # Vlug Laravel Boilerplate
 This is the boilerplate I use for almost all of my projects. It contains a lot of personal preferences and opinions i hold at the moment. There is a big chance these opninions will change in the future.
 
-**Main features:**
- 
+### Main features
 [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) instead of Bootstrap
 > As opposed to Bootstrap, i actually enjoy doing front-end development when using Tailwind.
 
@@ -11,8 +10,7 @@ Ready-to-go testing setup
 - [Snapshot assertions](https://github.com/spatie/phpunit-snapshot-assertions)
 
 
-**Opinionated defaults:**
- 
+### Opinionated defaults 
 - `app/Models` directory
 > It feels more organised to me to put models in their own directory, especially if you have more than a few.
 
