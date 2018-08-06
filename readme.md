@@ -38,9 +38,9 @@ Ready-to-go testing setup
 > There is a difference between unit tests and feature/integration tests, but i have found that putting them in seperate directories is not helpful. Having only a `tests/Unit` directory that contains all my tests allows me to mimic the directory stucture of my `app` directory, and therefor quickly have an overview of all the test classes i have. It also takes away the effort of having to decide if something is a unit test or a feature test. For example, is `UserTest.php` that uses the `RefreshDatabase` trait a unit or a feature test? I don't know, and i feel like it doesn't matter, just put it in `tests/Unit/Models/UserTest.php`.
 
 - Files that i almost always don't use in my projects have been removed:
-- `routes/console.php`
-- `routes/channels.php`
-> These files are almost always empty in all my projects. I see no reason to keep empty files that i don't use in my projects. If i ever need them in project i can always create them again.
+  - `routes/console.php`
+  - `routes/channels.php`
+> These files are almost always empty in all my projects. Having/making things because you might possibly need them in the future is usually a bad practice. If i ever need them in project i can always create them again.
 
 # Boilerplate version
 [compare to laravel master](https://github.com/laravel/laravel/compare/5da2d13b04ede450120affdd46c0cbe3a2fe54ef...master)
