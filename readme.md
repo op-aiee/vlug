@@ -1,5 +1,8 @@
 # Vlug Laravel Boilerplate
-This is the boilerplate I use for almost all of my projects. It contains a lot of personal preferences and opinions i hold at the moment. There is a big chance these opninions will change in the future.
+This is the boilerplate I use for almost all of my projects. It contains a lot of personal preferences and opinions i hold at the moment. There is a big chance these opinions will change in the future.
+
+### Boilerplate version
+[compare to laravel master](https://github.com/laravel/laravel/compare/7028b17ed8bf35ee2f1269c0f9c985b411cb4469...master)
 
 ### Main features
 [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) instead of Bootstrap
@@ -38,10 +41,7 @@ Ready-to-go testing setup
 - Files that i almost always don't use in my projects have been removed:
   - `routes/console.php`
   - `routes/channels.php`
-> These files are almost always empty in all my projects. Having/making things because you might possibly need them in the future is usually a bad practice. If i ever need them in project i can always create them again.
-
-# Boilerplate version
-[compare to laravel master](https://github.com/laravel/laravel/compare/5da2d13b04ede450120affdd46c0cbe3a2fe54ef...master)
+> These files are almost always empty in all my projects. If i ever need them in project i can always create them again.
 
 ## Installation
 ```bash

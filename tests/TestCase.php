@@ -6,13 +6,12 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\TestResponse;
 use Illuminate\Support\Facades\DB;
-use SjorsO\MocksTime\MocksTime;
 use Spatie\Snapshots\MatchesSnapshots;
 use Illuminate\Contracts\Console\Kernel;
 
 abstract class TestCase extends BaseTestCase
 {
-    use MocksTime, MatchesSnapshots;
+    use MatchesSnapshots;
 
     protected $testFilePath;
 
@@ -22,7 +21,7 @@ abstract class TestCase extends BaseTestCase
 
         $this->testFilePath = base_path('tests/Files/');
 
-        // $this->setTestNow('2018-05-07 12:00:00');
+        // Carbon::setTestNow('2018-05-07 12:00:00');
         
         TestResponse::macro('dump', function () {
             dd($this);
