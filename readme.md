@@ -2,7 +2,7 @@
 This is the boilerplate I use for almost all of my projects. It contains a lot of personal preferences and opinions i hold at the moment. There is a big chance these opinions will change in the future.
 
 ### Boilerplate version
-[compare to laravel master](https://github.com/laravel/laravel/compare/7028b17ed8bf35ee2f1269c0f9c985b411cb4469...master)
+[compare to laravel master](https://github.com/laravel/laravel/compare/b98d49ebb31e3875aef2a5696c5cbc7bf58883f2...master)
 
 ### Main features
 [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) instead of Bootstrap
@@ -51,9 +51,7 @@ composer update
 
 php artisan key:generate
  
-php artisan migrate
+php artisan migrate:fresh --seed
  
-npm install
- 
-npm run dev
+npm install && npm run dev
 ```
