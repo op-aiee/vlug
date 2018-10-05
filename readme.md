@@ -1,12 +1,12 @@
 # Vlug Laravel Boilerplate
-This is the boilerplate I use for almost all of my projects. It contains a lot of personal preferences and opinions i hold at the moment. There is a big chance these opinions will change in the future.
+This is the boilerplate I use for almost all of my projects. It contains a lot of personal preferences and opinions I hold at the moment. There is a big chance these opinions will change in the future.
 
 ### Boilerplate version
 [compare to laravel master](https://github.com/laravel/laravel/compare/b98d49ebb31e3875aef2a5696c5cbc7bf58883f2...master)
 
 ### Main features
 [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) instead of Bootstrap
-> As opposed to Bootstrap, i actually enjoy doing front-end development when using Tailwind.
+> As opposed to Bootstrap, I actually enjoy doing front-end development when using Tailwind.
 
 Ready-to-go testing setup
 - In-memory SQLite database
@@ -30,18 +30,18 @@ Ready-to-go testing setup
 > Having a file where you can dump global helper functions is useful in almost any project
 
 - A `app/Support/Enums` directory with a `UserRole` enum
-> A lot of my projects use enums. Since they are not edited often, i feel like `app/Support/Enums` is a good place for them. If you have the `Support` directory collapsed in your IDE you don't even notice they're there. I use my [SjorsO/enum](https://github.com/SjorsO/enum) package for making enums.
+> A lot of my projects use enums. Since they are not edited often, I feel like `app/Support/Enums` is a good place for them. If you have the `Support` directory collapsed in your IDE you don't even notice they're there. I use my [SjorsO/enum](https://github.com/SjorsO/enum) package for making enums.
  
 - Unhelpful phpdoc and comments have been removed
-> I like my code to have as little visual debt as possible (without going too crazy, of course). All default laravel comments that i found to be unhelpful have been removed. For example, this results in a way cleaner [`app/Console/Kernel`](https://github.com/SjorsO/vlug/blob/master/app/Console/Kernel.php) file
+> I like my code to have as little visual debt as possible (without going too crazy, of course). All default laravel comments that I found to be unhelpful have been removed. For example, this results in a way cleaner [`app/Console/Kernel`](https://github.com/SjorsO/vlug/blob/master/app/Console/Kernel.php) file
 
 - No `tests/Feature` directory
-> There is a difference between unit tests and feature/integration tests, but i have found that putting them in seperate directories is not helpful. Having only a `tests/Unit` directory that contains all my tests allows me to mimic the directory stucture of my `app` directory, and therefor quickly have an overview of all the test classes i have. It also takes away the effort of having to decide if something is a unit test or a feature test. For example, is `UserTest.php` that uses the `RefreshDatabase` trait a unit or a feature test? I don't know, and i feel like it doesn't matter, just put it in `tests/Unit/Models/UserTest.php`.
+> There is a difference between unit tests and feature/integration tests, but I have found that putting them in seperate directories is not helpful. Having only a `tests/Unit` directory that contains all my tests allows me to mimic the directory stucture of my `app` directory, and therefor quickly have an overview of all the test classes I have. It also takes away the effort of having to decide if something is a unit test or a feature test. For example, is `UserTest.php` that uses the `RefreshDatabase` trait a unit or a feature test? I don't know, and I feel like it doesn't matter, just put it in `tests/Unit/Models/UserTest.php`.
 
-- Files that i almost always don't use in my projects have been removed:
+- Files that I almost never use in my projects have been removed:
   - `routes/console.php`
   - `routes/channels.php`
-> These files are almost always empty in all my projects. If i ever need them in project i can always create them again.
+> These files are almost always empty in all my projects. If I ever need them in project I can always create them again.
 
 ## Installation
 ```bash
