@@ -47,7 +47,7 @@ Ready-to-go testing setup
 ```bash
 cp .env.examle .env
 
-composer update
+composer install
 
 php artisan key:generate
  
