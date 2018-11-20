@@ -45,7 +45,7 @@ Ready-to-go testing setup
 
 ## Installation
 ```bash
-cp .env.examle .env
+cp .env.example .env
 
 composer install
 
