@@ -2,7 +2,7 @@
 This is the boilerplate I use for almost all of my projects. It contains a lot of personal preferences and opinions I hold at the moment. There is a big chance these opinions will change in the future.
 
 ### Boilerplate version
-[compare to laravel master](https://github.com/laravel/laravel/compare/b98d49ebb31e3875aef2a5696c5cbc7bf58883f2...master)
+[Compare to laravel master](https://github.com/laravel/laravel/compare/6806aaa3568382e9c8c7281a64b82a52b824e46f...master)
 
 ### Main features
 [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) instead of Bootstrap
